@@ -1,0 +1,76 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{setspace,amsmath}
+\usepackage[14pt]{extsizes}
+\usepackage[left=3cm,right=3cm,
+    top=3cm,bottom=3cm,bindingoffset=0cm]{geometry}
+\setcounter{page}{524}
+\begin{document}
+ 
+ 
+отсюда $\displaystyle {x} = {(1 - z^4)}^{-2/3},{dx}={{8}\over{3}}{(1 - z^4)}^{-5/3}{z^3dz}$, поэтому
+    \begin{gather*}
+    I={{8}\over{3}}\int_{}^{}{{z^4}\over{(1-z^4)^2}}dz={{2}\over{3}}\int_{}^{}z \ d{{1}\over{1-z^4}}={2\over3}({{z}\over{1-z^4}}-\int_{}^{}{{dz}\over{1-z^4}})=
+    \\
+    ={{2z}\over{3(1-z^4)}}-{{1}\over{3}}\int_{}^{}({{1}\over{1-z^2}}+{{1}\over{1+z^2}})dz=
+    \\
+    ={{2z}\over{3(1-z^4)}}-{1\over6}ln \ |{{1+z}\over{1-z}}|-{1\over3}arctg \ z + C,
+    \end{gather*}
+    где $\displaystyle z$ выражается через $\displaystyle x$ по формуле (21.15).
+    \\
+
+
+\textbf{21.15 Интегралы вида $\displaystyle \int_{}^{} {{P_n(x)dx}\over{\sqrt{ax^2+bx+c}}}$} \\ \\ Рассмотрим интеграл
+\begin{gather*} \int_{}^{} {{P_n(x)dx}\over{\sqrt{ax^2+bx+c}}}dx, \ a \ne 0, \end{gather*}
+где $\displaystyle P_n(x)dx$ - многочлен степени $\displaystyle n \geq 1$. С принципиальной точки зрения этот интеграл всегда можно свести к интегралу от рациональной дроби с помощью одной из подстановок Эйлера (см.п.21.3). Однако в данном конкретном случае значительно быстрее к цели приводит обычно другой прием. \par
+Именно, покажем, что справедлива формула
+\begin{gather*} \int_{}^{} {{P_n(x)dx}\over{\sqrt{ax^2+bx+c}}}dx=
+\\
+={P_{n-1}(x)}\sqrt{ax^2+bx+c}+\alpha \int_{}^{} {{dx}\over{\sqrt{ax^2+bx+c}}}, \ \ (21.16) \end{gather*}
+где $\displaystyle P_{n-1}(x)dx$ - многочлен степени не выше, чем $\displaystyle n-1$, а $\displaystyle \alpha $ - некоторое число.
+\par
+Итак, пусть многочлен
+\begin{gather*} P_{n}(x)=a_nx^n+a_{n-1}x^{n-1}+\ldots +a_0 \ \ (21.17)\end{gather*}
+задан. Если существует многочлен
+\begin{gather*} P_{n-1}(x)=b_{n-1}x^{n-1}+b_{n-2}x^{n-2}+\ldots+b_0,\ \ (21.18)\end{gather*}
+удовлетворяющий условию (21.16), то, дифференцируя это равенство, получим
+\begin{gather*} {{P_n(x)}\over{\sqrt{ax^2+bx+c}}}=
+\\
+=P_{n-1}^{'}(x)\sqrt{ax^2+bx+c}+{{P_{n-1}(x)(2ax+b)}\over{2\sqrt{ax^2+bx+c}}}+{{\alpha}\over{\sqrt{ax^2+bx+c}}},\end{gather*}
+или
+\begin{gather*} 2P_{n}(x)=2P_{n-1}^{'}(x)(\sqrt{ax^2+bx+c})+P_{n-1}(x)(2ax+b)+2\alpha. \ \ (21.19)\end{gather*}
+
+
+ 
+Здесь слева стоит многочлен степени $\displaystyle n$, а справа каждое слагаемое также является многочленом степени не больше $\displaystyle n$.
+\par
+Замечая, что
+\begin{gather*} P_{n-1}^{'}=
+=(n-1)b_{n-1}x^{n-2}+\ldots +kb_{k}x^{k-1}+\ldots+b_1, \ \ (21.20)\end{gather*}
+и подставляя (21.17), (21.18) и (21.20) в (21.19), имеем равенства
+\begin{gather*} 2(a_nx^n+a_{n-1}x^{n-1}+\ldots +a_1x+a_0)=
+\\
+=2(ax^2+bx+c)[(n-1)b_{n-1}x^{n-2}+\ldots +kb_{k}x^{k-1}+\ldots+b_1]+
+\\
++(2ax+b)(b_{n-1}x^{n-1}+\ldots +b_{k}x^{k}+\ldots +b_0)+2\alpha\end{gather*}
+\ \ \ \ Приравнивая коэффиценты у одинаковых степеней $\displaystyle x$, получим следующую систему $\displaystyle n+1$ линейных уравнений с $\displaystyle n+1$ неизвестными $\displaystyle b_0,b_1,\ldots,b_{n-1},\alpha:$
+\begin{gather*} 2a_0=2cb_1+bb_0+2\alpha,
+\\
+2a_1=2bb_1+4cb_2+2ab_0+bb_1,
+\\
+\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots
+\\
+ 2a_k=2(k-1)ab_{k-1}+2kbb_k+2(k+1)cb_{k+1}+2ab_{k-1}+bb_k,
+\\
+\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots
+\\
+2a_{n-1}=2(n-2)ab_{n-2}+2(n-1)bb_{n-1}+2ab_{n-2}+bb_{n-1},
+\\
+2a_n=2(n-1)ab_{n-1}+2ab_{n-1}\end{gather*}
+
+Из последнего уравнения сразу находим:$\displaystyle b_{n-1}=a_n/na$/. Подставляя это выражение в предпоследнее уравнение и замечая, что в этом уравнении коэффицент у неизвестного $\displaystyle b_{n-2}$ равен $\displaystyle 2a(n-1)\ne0$, найдем значение $\displaystyle b_{n-2}$. Подставляя далее значения $\displaystyle b_{n-1}$ и $\displaystyle b_{n-2}$ в предыдущее уравнение, найдем
+ 
+  
+  
+\end{document}
